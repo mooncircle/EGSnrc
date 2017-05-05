@@ -659,6 +659,7 @@ private:
 
     EGS_Float        fsplit;    // photon splitting number
     EGS_Float        fspliti;   // inverse photon splitting number
+    int              csplit;    // radiative splitting number
 
     /*! Range rejection flag
       If set to 0, no range rejection is used
@@ -939,8 +940,8 @@ int EGS_ChamberApplication::initScoring() {
         //
         // ******** radiative event splitting
         //
-         int csplit=1;
-         if( !vr->getInput("radiative splitting", csplit) && csplit > 1) {
+        csplit=1;
+        if( !vr->getInput("radiative splitting", csplit) && csplit > 1) {
             egsInformation("\n => initScoring: splitting radiative events %d times ...\n", csplit);
            the_egsvr->nbr_split = csplit;
         }
@@ -2014,7 +2015,7 @@ int EGS_ChamberApplication::ausgab(int iarg) {
                     else the_stack->wt[ip] = 0;
                 else the_stack->latch[ip] = 0;	// split-photon of fat electron
         // or electron outside cse-region
-        the_egsvr->nbr_split = 1;
+        the_egsvr->nbr_split = csplit;
         return 0;
     }
 
