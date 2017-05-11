@@ -680,7 +680,7 @@ REPLACE {$MAXVAC} WITH {100}   "max. number of vacancies"
 "      Photoeffect   K,L1..L3,<M>,<N>    K,L1..L3
 "      Relaxation
 "   initial vacancy  K,L1..L3,<M>        K,L1..L3
-"    final vacancy   L1..L3,<M>,<N>      K,L1..L3,M1..M5,N1..N7...
+"    final vacancy   L1..L3,<M>,<N>      L1..L3,M1..M5,N1..N7...
 "
 " The current limitation of the initial vacancies will be removed
 " when a detailed implementation of photo-electric and EII interactions 
